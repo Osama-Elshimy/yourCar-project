@@ -1,0 +1,64 @@
+.hero {
+	background-image: url('src/assets/cars/desktop__hero-background.png');
+	background-size: cover;
+	background-position: center;
+	padding-inline: 6.4rem;
+	padding-block: 2rem 28rem;
+}
+
+.hero__text-box {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 4.8rem;
+
+	width: 50%;
+	margin-left: auto;
+}
+
+.hero__text-box * {
+	font-weight: 700;
+}
+
+.hero__title,
+.hero__subtitle {
+	text-align: end;
+}
+
+.hero__title {
+	font-size: 6.4rem;
+}
+
+.hero__subtitle {
+	font-size: 3.2rem;
+	max-width: 60%;
+}
+
+.hero__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	padding: 0.5rem 5rem;
+	border-color: #fff;
+	border-radius: 10px;
+	font-weight: 700;
+	transition: all 0.3s;
+}
+
+.hero__button:hover {
+	color: #741906;
+}
+
+.hero__button svg path {
+	transition: all 0.3s;
+}
+
+.hero__button:hover svg path {
+	stroke: #741906;
+}
+
+.hero__button p {
+	font-size: 2.4rem;
+}
