@@ -6,7 +6,6 @@ const Cars = () => {
 	return (
 		<section id='cars' className={classes.cars}>
 			<h2 className={classes.cars__title}>Cars</h2>
-			{/* <Slick /> */}
 		</section>
 	);
 };
