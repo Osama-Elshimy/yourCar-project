@@ -6,7 +6,7 @@ import classes from './Hero.module.css';
 
 const Hero = () => {
 	return (
-		<section className={classes.hero}>
+		<section className={classes.hero} id='hero'>
 			<NavBar />
 			<div id='home' className={classes['hero__text-box']}>
 				<h1 className={classes.hero__title}>

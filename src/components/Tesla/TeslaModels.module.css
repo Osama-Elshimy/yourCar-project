@@ -1,0 +1,63 @@
+.figure {
+	display: grid;
+	grid-template-columns: 2fr 3fr 2fr;
+	align-content: stretch;
+	justify-content: stretch;
+	margin-top: 9.6rem;
+}
+.figure img {
+	width: 100%;
+	height: 100%;
+}
+
+.figure div {
+	background-image: url('src/assets/cars/tesla-model-5.png');
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.figure h3 {
+	font-size: 3.2rem;
+	font-weight: 700;
+}
+
+.figure p {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.button:is(:link, :visited) {
+	font-size: 2.4rem;
+	font-weight: 600;
+	text-decoration: none;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	padding-inline: 2.6rem;
+	transition: all 0.3s ease;
+	position: relative;
+	outline: none;
+	z-index: 0;
+}
+
+.button:hover {
+	color: #741906;
+}
+.button:hover:after {
+	width: 100%;
+}
+.button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s ease;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: #dfdfdf;
+}

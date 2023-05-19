@@ -57,6 +57,7 @@ body {
 	font-size: 1.5rem;
 	font-family: Lora;
 	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
 }
 /*
   6. Improve media defaults
@@ -106,4 +107,12 @@ button {
 	background: transparent;
 	border-color: transparent;
 	outline: none;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.margin-left-sm {
+	margin-left: 1.2rem;
 }
