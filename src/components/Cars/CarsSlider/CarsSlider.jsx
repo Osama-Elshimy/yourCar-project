@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import CarActionBtns from '../../UI/CarActionBtns';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -32,7 +34,7 @@ function CarsSlider() {
 				}}>
 				{items.map(item => {
 					return (
-						<SwiperSlide key={item.name} className={classes['slider__item']}>
+						<SwiperSlide key={item.id} className={classes['slider__item']}>
 							<img
 								className={classes['slider__item-img']}
 								src={item.image}
@@ -79,11 +81,7 @@ function CarsSlider() {
 									</div>
 								</div>
 
-								<div className={classes['slider__item-btns']}>
-									<button className={classes.button__minus}>-</button>
-									<p>7</p>
-									<button className={classes.button__plus}>+</button>
-								</div>
+								<CarActionBtns car={item} />
 							</div>
 						</SwiperSlide>
 					);

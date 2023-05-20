@@ -10,7 +10,7 @@ const CartModal = () => {
 	};
 
 	return (
-		<div>
+		<>
 			<button className={classes['nav__cart-btn']} onClick={cartClickHandler}>
 				<svg
 					width='42'
@@ -38,7 +38,7 @@ const CartModal = () => {
 						? `${classes['modal-overlay']} ${classes['modal-overlay__open']}`
 						: classes['modal-overlay']
 				}></div>
-		</div>
+		</>
 	);
 };
 

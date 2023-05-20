@@ -103,7 +103,7 @@
 	opacity: 0;
 	pointer-events: none;
 	visibility: hidden;
-	/* transform: translateX(100%); */
+	transform: translateX(100%);
 	transition: all 0.5s ease-in;
 }
 
@@ -111,5 +111,5 @@
 	opacity: 1;
 	pointer-events: auto;
 	visibility: visible;
-	transform: translateX(-100%);
+	transform: translateX(0);
 }
