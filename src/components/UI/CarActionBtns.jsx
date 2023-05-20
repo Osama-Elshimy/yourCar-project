@@ -8,7 +8,7 @@ const CarActionBtns = ({ car }) => {
 	const carCount = useSelector(state => state.cart.cars[car.id]);
 
 	const addToCartHandler = () => {
-		dispatch(addToCart(car.id));
+		dispatch(addToCart(car));
 	};
 
 	const removeFromCartHandler = () => {
