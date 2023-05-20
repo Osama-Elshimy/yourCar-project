@@ -47,13 +47,12 @@
 	transform: scale(1.1);
 }
 
-.nav__cart-btn::before {
-	content: '9';
+.total__count {
 	position: absolute;
 	bottom: 2rem;
 	right: 0;
 	font-size: 1.6rem;
-	font-weight: 600;
+	font-weight: 700;
 	color: #223f5c;
 	background-color: #f8d7a4;
 	border-radius: 4px;
@@ -82,7 +81,7 @@
 	fill: #741906;
 }
 
-.nav.nav--sticky .nav__cart-btn::before {
+.nav.nav--sticky .total__count {
 	background-color: #741906;
 	color: inherit;
 }

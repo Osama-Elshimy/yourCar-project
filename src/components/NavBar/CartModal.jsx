@@ -1,9 +1,16 @@
 import { useState } from 'react';
 
+import { useSelector } from 'react-redux';
+import { selectTotalCarCount } from '../../store/cartSlice';
+import { selectSelectedCars } from '../../store/cartSlice';
+
 import classes from './Navbar.module.css';
 
 const CartModal = () => {
 	const [cartIsOpen, setCartIsOpen] = useState(false);
+	const totalCarCount = useSelector(selectTotalCarCount);
+	const selectedCars = useSelector(selectSelectedCars);
+	// console.log(selectedCars);
 
 	const cartClickHandler = () => {
 		setCartIsOpen(prevState => !prevState);
@@ -12,6 +19,7 @@ const CartModal = () => {
 	return (
 		<>
 			<button className={classes['nav__cart-btn']} onClick={cartClickHandler}>
+				<span className={classes.total__count}>{totalCarCount}</span>
 				<svg
 					width='42'
 					height='36'
@@ -37,7 +45,11 @@ const CartModal = () => {
 					cartIsOpen
 						? `${classes['modal-overlay']} ${classes['modal-overlay__open']}`
 						: classes['modal-overlay']
-				}></div>
+				}>
+				<ul>
+					<li>this is a test</li>
+				</ul>
+			</div>
 		</>
 	);
 };
