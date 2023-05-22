@@ -25,7 +25,7 @@ const NavBar = () => {
 	}, []);
 
 	const handleScroll = () => {
-		if (window.pageYOffset > 600) {
+		if (window.pageYOffset > 200) {
 			setSticky(true);
 		} else {
 			setSticky(false);

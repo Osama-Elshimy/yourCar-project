@@ -242,3 +242,19 @@ hr {
 		margin-top: 2.4rem;
 	}
 }
+
+/* BELOW 528px */
+@media (max-width: 33em) {
+	.contact__item > h3 {
+		font-size: 4.8rem;
+	}
+
+	.contact__item h4 {
+		font-size: 3.6rem;
+	}
+
+	.contact__item > p {
+		font-size: 2.4rem;
+		width: 100%;
+	}
+}

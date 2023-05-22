@@ -239,13 +239,27 @@
 	}
 
 	.nav__list.nav__list--active .nav__item a:is(:link, :visited) {
+		color: #fff;
 		display: block;
 		padding-left: 4.8rem;
 		padding-block: 1.2rem;
 		border-radius: 0;
 	}
 
-	.nav.nav--sticky .nav__menu-btn > svg path {
+	.nav.nav--sticky .nav__menu-btn > svg path,
+	.nav.nav--sticky .nav__cart-btn > svg path {
 		fill: #1f2430;
+	}
+
+	.nav.nav--sticky .total__count {
+		background-color: #1f2430;
+		color: #fff;
+	}
+}
+
+/* BELOW 528px */
+@media (max-width: 33em) {
+	.modal-overlay {
+		width: 100%;
 	}
 }

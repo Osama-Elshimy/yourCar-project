@@ -79,10 +79,27 @@
 
 /* BELOW 784px */
 @media (max-width: 49em) {
+	.about {
+		grid-template-columns: 1fr;
+	}
+
+	.about__image-box {
+		display: none;
+	}
+
+	.about__title {
+		text-align: center;
+	}
+
 	.about__title::before {
-		font-size: 9rem;
-		left: -1rem;
-		bottom: 2.6rem;
+		text-align: center;
+		font-size: 12rem;
+		left: 13rem;
+		bottom: 2rem;
+	}
+
+	.about__text-box p {
+		line-height: 4rem;
 	}
 }
 
@@ -108,5 +125,20 @@
 
 	.about__text-box p {
 		line-height: 4rem;
+	}
+}
+
+/* BELOW 528px */
+@media (max-width: 33em) {
+	.about {
+		padding-inline: 4.8rem;
+	}
+
+	.about__text-box {
+		width: 100%;
+	}
+
+	.about__title::before {
+		font-size: 9rem;
 	}
 }

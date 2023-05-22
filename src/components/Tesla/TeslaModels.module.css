@@ -77,8 +77,8 @@
 		display: block;
 	}
 
-	.figure div {
-		padding-block: 12rem;
+	.figure > div {
+		padding-block: 18rem;
 		width: 100vw;
 	}
 
@@ -90,5 +90,12 @@
 	.figure img:nth-of-type(7) {
 		display: block;
 		width: 100vw;
+	}
+}
+
+/* BELOW 528px */
+@media (max-width: 33em) {
+	.figure > div {
+		padding-block: 10rem;
 	}
 }
