@@ -4,16 +4,20 @@ import data from './../assets/data.json';
 
 const carsData = data.cars;
 
-const initialState = {
+const localStorageState = JSON.parse(localStorage.getItem('cart')) || null;
+
+let initialState = localStorageState || {
 	cars: {},
 	ordersList: [],
 	totalCars: 0,
 };
 
-// Prepare initial car count based on car data
-carsData.forEach(car => {
-	initialState.cars[car.id] = 0;
-});
+if (!localStorageState) {
+	// Prepare initial car count based on car data
+	carsData.forEach(car => {
+		initialState.cars[car.id] = 0;
+	});
+}
 
 const cartSlice = createSlice({
 	name: 'cart',
@@ -29,6 +33,9 @@ const cartSlice = createSlice({
 
 			if (carIndex === -1) state.ordersList.push({ ...car, count: 1 });
 			else state.ordersList[carIndex].count++;
+
+			// Save cart state to local storage
+			localStorage.setItem('cart', JSON.stringify(state));
 		},
 
 		removeFromCart: (state, action) => {
@@ -43,6 +50,9 @@ const cartSlice = createSlice({
 				const carIndex = state.ordersList.findIndex(c => c.id === carId);
 				state.ordersList.splice(carIndex, 1);
 			}
+
+			// Save cart state to local storage
+			localStorage.setItem('cart', JSON.stringify(state));
 		},
 
 		deleteCar: (state, action) => {
@@ -52,6 +62,9 @@ const cartSlice = createSlice({
 
 			const carIndex = state.ordersList.findIndex(c => c.id === carId);
 			state.ordersList.splice(carIndex, 1);
+
+			// Save cart state to local storage
+			localStorage.setItem('cart', JSON.stringify(state));
 		},
 
 		clearCart: state => {
@@ -63,6 +76,16 @@ const cartSlice = createSlice({
 			Object.keys(initialState.cars).forEach(carId => {
 				state.cars[carId] = 0;
 			});
+
+			// Save cart state to local storage
+			localStorage.clear();
+		},
+
+		loadCart: state => {
+			// Load cart state from local storage
+			const cartState = localStorage.getItem('cart');
+
+			if (cartState) state = JSON.parse(cartState);
 		},
 	},
 });
@@ -82,3 +105,8 @@ export const orderedCars = createSelector(
 	state => state.cart.ordersList,
 	ordersList => ordersList
 );
+
+// Load cart state from local storage when the app initializes
+export const loadCartState = () => dispatch => {
+	dispatch(cartSlice.actions.loadCart());
+};

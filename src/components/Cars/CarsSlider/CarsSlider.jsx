@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react';
 import CarActionBtns from '../../UI/CarActionBtns';
 
 // Import Swiper React components
@@ -23,14 +22,33 @@ function CarsSlider() {
 		<>
 			<Swiper
 				className={classes.slider}
-				modules={[Pagination, Navigation]}
-				navigation
-				loop={true}
-				slidesPerView={3}
-				spaceBetween={30}
-				centeredSlides={true}
 				pagination={{
 					clickable: true,
+				}}
+				navigation={true}
+				modules={[Pagination, Navigation]}
+				breakpoints={{
+					// 200: {
+					// 	slidesPerView: 1,
+					// 	// centeredSlides: true,
+					// 	spaceBetween: 20,
+					// },
+					// 770: {
+					// 	slidesPerView: 3,
+					// 	spaceBetween: 30,
+					// 	centeredSlides: true,
+					// 	loop: true,
+					// },
+					1100: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+						centeredSlides: true,
+						loop: true,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					},
 				}}>
 				{items.map(item => {
 					return (

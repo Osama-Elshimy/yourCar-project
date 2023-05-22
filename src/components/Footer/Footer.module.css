@@ -1,12 +1,10 @@
 .companies {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	place-items: center;
+	width: 100%;
 	padding-block: 9.6rem;
 	padding-inline: 8rem;
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: 0.5rem;
 	margin-bottom: 9.6rem;
 	background-color: #e5e5e5;
 }
@@ -28,7 +26,6 @@
 	justify-items: start;
 	gap: 0;
 	line-height: 20px;
-	margin-bottom: 3.6rem;
 }
 
 .contact__item {
@@ -126,23 +123,6 @@ span {
 	background: #fff;
 }
 
-.social {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 3.6rem;
-	margin-top: 3rem;
-}
-
-.social svg {
-	transition: all 0.3s;
-}
-
-.social svg:hover {
-	cursor: pointer;
-	transform: scale(1.2);
-}
-
 .contact__info {
 	display: flex;
 	align-items: center;
@@ -165,6 +145,22 @@ span {
 	transform: scale(1.6) !important;
 }
 
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3.6rem;
+	margin-bottom: 2rem;
+}
+
+.social svg {
+	transition: all 0.3s;
+}
+
+.social svg:hover {
+	transform: scale(1.2);
+}
+
 hr {
 	background-color: #7418065b;
 	color: #7418065b;
@@ -178,4 +174,71 @@ hr {
 	font-size: 1.4rem;
 	text-align: center;
 	margin-top: 2.4rem;
+}
+
+/* MEDIA QUERIES */
+
+/* BELOW 1024px */
+@media (max-width: 64em) {
+	.companies {
+		gap: 3rem;
+	}
+}
+
+/* BELOW 864px */
+@media (max-width: 54em) {
+	.companies {
+		grid-template-columns: repeat(4, 1fr);
+		row-gap: 4.8rem;
+		/* column-gap: 10rem; */
+	}
+}
+
+/* BELOW 748px */
+@media (max-width: 49em) {
+	.container {
+		padding-top: 0;
+	}
+
+	.contact {
+		grid-template-columns: 1fr;
+		/* place-content: center; */
+		place-items: center;
+		row-gap: 3.6rem;
+	}
+
+	.contact__item {
+		text-align: center;
+	}
+
+	.contact__item h3 {
+		font-size: 3.6rem;
+	}
+
+	.contact__item h4 {
+		font-size: 3.2rem;
+	}
+
+	.contact__item p {
+		font-size: 1.8rem;
+	}
+
+	.contact__item > p {
+		margin: 0 auto !important;
+	}
+
+	.contact__item form {
+		flex-direction: column-reverse;
+		margin-inline: auto;
+	}
+
+	.button {
+		width: 60%;
+		margin-inline: auto;
+		padding: 0.8rem 2rem;
+	}
+
+	.social {
+		margin-top: 2.4rem;
+	}
 }

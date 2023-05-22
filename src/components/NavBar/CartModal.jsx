@@ -11,7 +11,7 @@ import {
 import classes from './Navbar.module.css';
 import CarActionBtns from '../UI/CarActionBtns';
 
-const CartModal = () => {
+const CartModal = ({ onCartClick }) => {
 	const [cartIsOpen, setCartIsOpen] = useState(false);
 
 	const dispatch = useDispatch();
@@ -19,7 +19,10 @@ const CartModal = () => {
 	const selectedCars = useSelector(orderedCars) || [];
 
 	const cartClickHandler = () => {
-		setCartIsOpen(prevState => !prevState);
+		setCartIsOpen(prev => !prev);
+
+		// Close navigation bar when the cart is opened
+		onCartClick();
 	};
 
 	const handleClearCart = () => {
@@ -50,6 +53,7 @@ const CartModal = () => {
 					/>
 				</svg>
 			</button>
+
 			<div
 				className={
 					cartIsOpen

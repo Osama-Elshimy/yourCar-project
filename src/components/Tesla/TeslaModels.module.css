@@ -5,6 +5,7 @@
 	justify-content: stretch;
 	margin-top: 9.6rem;
 }
+
 .figure img {
 	width: 100%;
 	height: 100%;
@@ -12,6 +13,10 @@
 
 .figure div {
 	background-image: url('src/assets/cars/tesla-model-5.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -47,9 +52,11 @@
 .button:hover {
 	color: #741906;
 }
+
 .button:hover:after {
 	width: 100%;
 }
+
 .button:after {
 	content: '';
 	position: absolute;
@@ -60,4 +67,28 @@
 	width: 0;
 	height: 100%;
 	background: #dfdfdf;
+}
+
+/* MEDIA QUERIES */
+
+/* BELOW 704px */
+@media (max-width: 44em) {
+	.figure {
+		display: block;
+	}
+
+	.figure div {
+		padding-block: 12rem;
+		width: 100vw;
+	}
+
+	.figure img {
+		display: none;
+	}
+
+	.figure img:nth-of-type(2),
+	.figure img:nth-of-type(7) {
+		display: block;
+		width: 100vw;
+	}
 }

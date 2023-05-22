@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import CartModal from './CartModal';
 
@@ -7,12 +7,13 @@ import classes from './Navbar.module.css';
 const NavBar = () => {
 	const [navIsOpen, setNavIsOpen] = useState(false);
 	const [isSticky, setSticky] = useState(false);
-	const [section, setSection] = useState(null);
 
 	const cartClickHandler = () => {
-		setNavIsOpen(prev => {
-			return !prev;
-		});
+		setNavIsOpen(false);
+	};
+
+	const navClickHandler = () => {
+		setNavIsOpen(prev => !prev);
 	};
 
 	useEffect(() => {
@@ -30,24 +31,6 @@ const NavBar = () => {
 			setSticky(false);
 		}
 	};
-
-	/* 	const observer = new IntersectionObserver(
-		entries => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					setSection(entry.target.id);
-				}
-			});
-		},
-		{ rootMargin: '-50% 0px -50% 0px' }
-	);
-
-	useEffect(() => {
-		const sections = document.querySelectorAll('section');
-		sections.forEach(section => observer.observe(section));
-
-		return () => observer.disconnect();
-	}, []); */
 
 	return (
 		<nav
@@ -70,20 +53,33 @@ const NavBar = () => {
 					{['home', 'about', 'services', 'cars'].map(item => {
 						return (
 							<li key={item + '-link'} className={classes['nav__item']}>
-								<a href={`#${item}`} onClick={cartClickHandler}>
+								<a href={`#${item}`} onClick={navClickHandler}>
 									{item}
 								</a>
 							</li>
 						);
 					})}
 					<li key={'contact-us' + '-link'} className={classes['nav__item']}>
-						<a href={'#contact-us'} onClick={cartClickHandler}>
+						<a href={'#contact-us'} onClick={navClickHandler}>
 							Contact us
 						</a>
 					</li>
 				</ul>
 
-				<CartModal />
+				<CartModal onCartClick={cartClickHandler} />
+				<button className={classes['nav__menu-btn']} onClick={navClickHandler}>
+					<svg
+						width='24'
+						height='16'
+						viewBox='0 0 24 16'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							d='M0 16H24V13.3333H0V16ZM0 9.33333H24V6.66667H0V9.33333ZM0 0V2.66667H24V0H0Z'
+							fill='#1F2430'
+						/>
+					</svg>
+				</button>
 			</div>
 		</nav>
 	);

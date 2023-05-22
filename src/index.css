@@ -117,3 +117,40 @@ button {
 .margin-left-sm {
 	margin-left: 1.2rem;
 }
+
+/* MEDIA QUERIES */
+
+/* BELOW 1296px */
+@media (max-width: 81em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+/* BELOW 1232px */
+@media (max-width: 77em) {
+	html {
+		font-size: 50%;
+	}
+}
+
+/* BELOW 1200px */
+@media (max-width: 75em) {
+	html {
+		font-size: 50%;
+	}
+}
+
+/* BELOW 1024px */
+@media (max-width: 64em) {
+	html {
+		font-size: 43.75%;
+	}
+}
+
+/* BELOW 864px */
+@media (max-width: 54em) {
+	html {
+		font-size: 43.75%;
+	}
+}
