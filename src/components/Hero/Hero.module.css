@@ -1,5 +1,5 @@
 .hero {
-	background-image: url('src/assets/cars/desktop__hero-background.png');
+	background-image: url('/assets/cars/desktop__hero-background.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

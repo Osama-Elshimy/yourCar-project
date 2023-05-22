@@ -28,7 +28,7 @@ const About = () => {
 				</p>
 			</div>
 			<div className={classes['about__image-box']}>
-				<img src='src/assets/cars/about__car.png' alt='car' />
+				<img src='/assets/cars/about__car.png' alt='car' />
 			</div>
 		</section>
 	);

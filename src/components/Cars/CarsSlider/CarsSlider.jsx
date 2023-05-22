@@ -13,7 +13,7 @@ import { Pagination, Navigation, Keyboard, A11y } from 'swiper';
 
 import classes from './Swiper.module.css';
 
-import data from '../../../assets/data.json';
+import data from './../../../../public/assets/data.json';
 
 import { useSwiper } from 'swiper/react';
 
@@ -42,12 +42,12 @@ function CarsSlider() {
 				breakpoints={{
 					// when window width is >= 450px
 					450: {
-						width: 430,
+						width: 380,
 						slidesPerView: 1,
 					},
 					// when window width is >= 600px
 					600: {
-						width: 580,
+						width: 460,
 						slidesPerView: 1,
 					},
 					// when window width is >= 768px

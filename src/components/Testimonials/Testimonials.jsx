@@ -6,7 +6,7 @@ const Testimonials = () => {
 		<section id='testimonials' className={classes.testimonials}>
 			<h2 className={classes.testimonials__title}>Testimonials</h2>
 			<TestimonialsSlider />
-			<img src='src/assets/cars/testomonial-car.png' />
+			<img src='/assets/cars/testomonial-car.png' />
 		</section>
 	);
 };

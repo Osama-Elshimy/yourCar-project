@@ -12,7 +12,7 @@
 }
 
 .figure div {
-	background-image: url('src/assets/cars/tesla-model-5.png');
+	background-image: url('/assets/cars/tesla-model-5.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;

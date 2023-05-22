@@ -1,6 +1,6 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 
-import data from './../assets/data.json';
+import data from './../../public/assets/data.json';
 
 const carsData = data.cars;
 

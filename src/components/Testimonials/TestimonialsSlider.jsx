@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper';
 
-import data from '../../assets/data.json';
+import data from './../../../public/assets/data.json';
 
 import classes from './Testimonials.module.css';
 

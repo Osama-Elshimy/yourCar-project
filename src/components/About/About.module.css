@@ -43,7 +43,7 @@
 
 .about__image-box {
 	width: 80%;
-	background: url('src/assets/cars/about__background.png');
+	background: url('/assets/cars/about__background.png');
 	background-size: cover;
 	background-position: center;
 }
