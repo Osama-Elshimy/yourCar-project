@@ -19,10 +19,10 @@ The site is fully responsive, adapting to different screen sizes and devices. It
 
 ## DEMO
 Desktop demo screenshot  
-<img src="" alt="desktop screenshot" />
+<img src="https://github.com/Osama-Elshimy/yourCar-project/blob/master/public/assets/desktop-demo.png" alt="desktop screenshot" />
 
 Mobile demo screenshot   
-<img src="" alt="mobile screenshot" width="400px" />
+<img src="https://github.com/Osama-Elshimy/yourCar-project/blob/master/public/assets/mobile-demo.png" alt="mobile screenshot" width="400px" />
 
-##  [LIVE DEMO]()
+##  [LIVE DEMO](https://yourcar-project.netlify.app/)
 
