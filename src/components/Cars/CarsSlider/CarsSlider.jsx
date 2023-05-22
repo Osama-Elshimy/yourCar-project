@@ -9,14 +9,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Keyboard, A11y } from 'swiper';
 
 import classes from './Swiper.module.css';
 
 import data from '../../../assets/data.json';
 
+import { useSwiper } from 'swiper/react';
+
 function CarsSlider() {
 	const items = data.cars;
+
+	const swiper = useSwiper();
 
 	return (
 		<>
@@ -25,29 +29,42 @@ function CarsSlider() {
 				pagination={{
 					clickable: true,
 				}}
-				navigation={true}
-				modules={[Pagination, Navigation]}
+				spaceBetween={30}
+				loop={true}
+				centeredSlides={true}
+				navigation={{
+					enabled: true,
+					nextEl: '.next',
+					prevEl: '.prev',
+				}}
+				keyboard={true}
+				modules={[Pagination, Navigation, Keyboard, A11y]}
 				breakpoints={{
-					// 200: {
-					// 	slidesPerView: 1,
-					// 	// centeredSlides: true,
-					// 	spaceBetween: 20,
-					// },
-					// 770: {
-					// 	slidesPerView: 3,
-					// 	spaceBetween: 30,
-					// 	centeredSlides: true,
-					// 	loop: true,
-					// },
-					1100: {
-						slidesPerView: 3,
+					// when window width is >= 450px
+					450: {
+						width: 430,
+						slidesPerView: 1,
+					},
+					// when window width is >= 600px
+					600: {
+						width: 580,
+						slidesPerView: 1,
+					},
+					// when window width is >= 768px
+					768: {
+						width: 750,
+						slidesPerView: 2,
+						spaceBetween: 50,
+					},
+					1000: {
+						width: 950,
+						slidesPerView: 2,
 						spaceBetween: 30,
-						centeredSlides: true,
-						loop: true,
-						navigation: {
-							nextEl: '.swiper-button-next',
-							prevEl: '.swiper-button-prev',
-						},
+					},
+					1200: {
+						width: 1300,
+						slidesPerView: 3,
+						spaceBetween: 20,
 					},
 				}}>
 				{items.map(item => {
@@ -104,6 +121,51 @@ function CarsSlider() {
 						</SwiperSlide>
 					);
 				})}
+
+				<div className={classes.btns}>
+					<button className='prev'>
+						<svg
+							width='36'
+							height='36'
+							viewBox='0 0 36 36'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<circle
+								cx='18'
+								cy='18'
+								r='17.5'
+								transform='rotate(-180 18 18)'
+								fill='#741906'
+								stroke='white'
+							/>
+							<path
+								d='M21.4142 12.3432L20 10.929L12.9289 18L20 25.0711L21.4142 23.6569L15.7573 18L21.4142 12.3432Z'
+								fill='white'
+							/>
+						</svg>
+					</button>
+					<button className='next'>
+						<svg
+							width='36'
+							height='36'
+							viewBox='0 0 36 36'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'>
+							<circle
+								cx='18'
+								cy='18'
+								r='17.5'
+								transform='matrix(1 0 0 -1 0 36)'
+								fill='#741906'
+								stroke='white'
+							/>
+							<path
+								d='M14.5858 12.3432L16 10.929L23.0711 18L16 25.0711L14.5858 23.6569L20.2427 18L14.5858 12.3432Z'
+								fill='white'
+							/>
+						</svg>
+					</button>
+				</div>
 			</Swiper>
 		</>
 	);
